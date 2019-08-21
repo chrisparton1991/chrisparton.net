@@ -13,3 +13,15 @@
 .site-banner {
     padding: 100px 0;
 }
+
+/* Shrink banner text on small screens to ensure it fits. */
+@media (max-width: 500px) {
+    .site-banner-title {
+        font-size: 3rem;
+    }
+}
+
+/* Slightly increase size of social icons. */
+.site-nav-icon {
+    height: 20px;
+}
