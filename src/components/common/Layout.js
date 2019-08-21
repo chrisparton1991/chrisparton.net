@@ -9,6 +9,7 @@ import config from '../../utils/siteConfig'
 
 // Styles
 import '../../styles/app.css'
+import '../../styles/blog.css'
 
 /**
 * Main layout component
@@ -20,6 +21,7 @@ import '../../styles/app.css'
 */
 const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
     const site = data.allGhostSettings.edges[0].node
+    const profileImageUrl = data.allGhostPost.edges[0].node.primary_author.profile_image
     const twitterUrl = site.twitter ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}` : null
     const facebookUrl = site.facebook ? `https://www.facebook.com/${site.facebook.replace(/^\//, ``)}` : null
 
@@ -54,6 +56,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                         </div>
                         { isHome ?
                             <div className="site-banner">
+                                <img className="banner-profile-image" src={profileImageUrl}/>
                                 <h1 className="site-banner-title">{site.title}</h1>
                                 <p className="site-banner-desc">{site.description}</p>
                             </div> :
@@ -114,6 +117,15 @@ const DefaultLayoutSettingsQuery = props => (
                     edges {
                         node {
                             ...GhostSettingsFields
+                        }
+                    }
+                }
+                allGhostPost(limit: 1) {
+                    edges {
+                        node {
+                            primary_author {
+                                profile_image
+                            }
                         }
                     }
                 }

@@ -1,0 +1,15 @@
+/** Display profile picture on main page. */
+.banner-profile-image {
+    z-index: 10;
+    flex-shrink: 0;
+    margin-bottom: 20px;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 0 0 6px hsla(0, 0%, 100%, .1);
+    border-radius: 50%;
+}
+
+/* Reduce vertical padding, it was way too much on an ultrawide monitor. */
+.site-banner {
+    padding: 100px 0;
+}
