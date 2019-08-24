@@ -11,8 +11,10 @@
   "keywords": [],
   "main": "n/a",
   "scripts": {
-    "serve": "gatsby build && cross-env NODE_ENV=production gatsby serve",
-    "build": "gatsby build",
+    "build": "gatsby build && npm run copyImages && npm run rewriteImageUrls",
+    "serve": "cross-env NODE_ENV=production gatsby serve",
+    "copyImages": "cpx ghost/content/images/**/* public/images",
+    "rewriteImageUrls": "replace http://localhost:2368/content/ / ./public -r -q --include='*.css,*.html,*.json",
     "ghostStart": "cd ghost && ghost start",
     "ghostStop": "cd ghost && ghost stop",
     "dev": "gatsby develop",
@@ -21,11 +23,13 @@
     "deploy": "cross-env NODE_DEBUG=gh-pages gh-pages -d public -b master"
   },
   "devDependencies": {
+    "cpx": "^1.5.0",
     "cross-env": "^5.2.0",
     "eslint": "6.1.0",
     "eslint-plugin-ghost": "0.4.0",
     "eslint-plugin-react": "7.14.3",
-    "gh-pages": "^2.1.1"
+    "gh-pages": "^2.1.1",
+    "replace": "^1.1.1"
   },
   "dependencies": {
     "@tryghost/helpers": "1.1.7",
