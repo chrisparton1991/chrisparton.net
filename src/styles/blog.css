@@ -30,6 +30,11 @@ body.cp-page-index {
     height: 20px;
 }
 
+/* Reduce the size of the image captions. */
+.kg-card figcaption {
+    font-size: 1.3rem;
+}
+
 /* Emulate the new ghost theme styling for post cards on the index page. */
 body.cp-page-index .post-card {
     background: #fff 50%;
@@ -57,9 +62,4 @@ body.cp-page-index .post-card-image {
 }
 body.cp-page-index .post-card-footer {
     padding: 0 25px 25px 25px;
-}
-
-/* Reduce the size of the image captions. */
-body.cp-page-index .kg-card figcaption {
-    font-size: 1.3rem;
 }

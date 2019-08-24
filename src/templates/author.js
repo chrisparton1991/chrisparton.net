@@ -24,7 +24,7 @@ const Author = ({ data, location, pageContext }) => {
                 location={location}
                 type="profile"
             />
-            <Layout>
+            <Layout bodyClass="cp-page-author">
                 <div className="container">
                     <header className="author-header">
                         <div className="author-header-content">

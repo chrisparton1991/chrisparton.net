@@ -22,7 +22,7 @@ const Tag = ({ data, location, pageContext }) => {
                 location={location}
                 type="series"
             />
-            <Layout>
+            <Layout bodyClass="cp-page-tag">
                 <div className="container">
                     <header className="tag-header">
                         <h1>{tag.name}</h1>
