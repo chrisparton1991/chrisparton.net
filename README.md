@@ -26,7 +26,11 @@ $ npm run ghostStart
 # Step 4: Run Gatsby build.
 $ npm run build
 
-# Step 6: Deploy to GitHub Pages.
+# Step 5: Verify the changes.
+$ npm run serve
+# Navigate to http://localhost:9000 and ensure the blog looks good.
+
+# Step 6: Deploy updated blog to GitHub Pages.
 $ npm run deploy
 
 # Step 7: Stop Ghost.
