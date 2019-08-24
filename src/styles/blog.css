@@ -1,3 +1,7 @@
+body.cp-page-index {
+    background: #f4f8fb;
+}
+
 /** Display profile picture on main page. */
 .banner-profile-image {
     z-index: 10;
@@ -24,4 +28,38 @@
 /* Slightly increase size of social icons. */
 .site-nav-icon {
     height: 20px;
+}
+
+/* Emulate the new ghost theme styling for post cards on the index page. */
+body.cp-page-index .post-card {
+    background: #fff 50%;
+    border-radius: 5px;
+    box-shadow: 8px 14px 38px rgba(39, 44, 49, .06), 1px 3px 8px rgba(39, 44, 49, .03);
+    transition: box-shadow .5s;
+    overflow: hidden; /* Force long tags to be cut off instead of pushing the bounds of the card. */
+}
+body.cp-page-index .post-card:hover {
+    box-shadow: 8px 14px 38px rgba(39, 44, 49, .15), 1px 3px 8px rgba(39, 44, 49, .12);
+}
+body.cp-page-index .post-card-excerpt, .post-card-tags, .post-card-title {
+    padding: 0 25px;
+}
+body.cp-page-index .post-card-tags {
+    font-size: 12px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+body.cp-page-index .post-card-image {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+body.cp-page-index .post-card-footer {
+    padding: 0 25px 25px 25px;
+}
+
+/* Reduce the size of the image captions. */
+body.cp-page-index .kg-card figcaption {
+    font-size: 1.3rem;
 }

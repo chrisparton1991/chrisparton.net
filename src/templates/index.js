@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
@@ -15,6 +15,11 @@ import { MetaData } from '../components/common/meta'
 */
 const Index = ({ data, location, pageContext }) => {
     const posts = data.allGhostPost.edges
+
+    useEffect(() => {
+        document.body.classList.add('cp-page-index');
+        return () => document.body.classList.remove('cp-page-index');
+    }, []);
 
     return (
         <>
