@@ -13,8 +13,8 @@
   "scripts": {
     "build": "gatsby build && npm run copyImages && npm run rewriteImageUrls",
     "serve": "cross-env NODE_ENV=production gatsby serve",
-    "copyImages": "cpx ghost/content/images/**/* public/images",
-    "rewriteImageUrls": "replace http://localhost:2368/content/ / ./public -r -q --include='*.css,*.html,*.json",
+    "copyImages": "cpx ghost/content/images/**/* public/content/images",
+    "rewriteImageUrls": "replace http://localhost:2368 https://chrisparton.net ./public -r -q --include='*.css,*.html,*.js,*.json,*.xml,rss",
     "ghostStart": "cd ghost && ghost start",
     "ghostStop": "cd ghost && ghost stop",
     "dev": "gatsby develop",
